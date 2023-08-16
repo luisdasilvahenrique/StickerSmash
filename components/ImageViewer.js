@@ -1,9 +1,10 @@
 import { Image } from "react-native";
 import { StyleSheet } from 'react-native';
 
-export default function ImageViewer({ placehordelImageSource }) {
+export default function ImageViewer({ placehordelImageSource, selectedImage }) {
+    const imageSource = selectedImage ? { uri: selectedImage } : placehordelImageSource;
     return (
-        <Image source={placehordelImageSource} style={styles.image} />
+        <Image source={imageSource} style={styles.image} />
     )
 }
 
