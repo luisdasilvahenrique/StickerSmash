@@ -8,6 +8,7 @@ import EmojiPicker from './components/EmojiPicker';
 import EmojiSticker from './components/EmojiSticker';
 import EmojiList from './components/EmojiList';
 import { useState } from 'react';
+import ImageViewer from './components/ImageViewer';
 
 const PlaceholderImage = require('./assets/images/background-image.png');
 
@@ -23,7 +24,7 @@ export default function App() {
   };
 
   const onAddSticker = () => {
-    isModalVisible = true;
+    setIsModalVisible(true);
   };
 
   const onModalClose = () => {
@@ -39,7 +40,7 @@ export default function App() {
       quality: 1,
     });
 
-    if(!result.cancelled) {
+    if(!result.canceled) {
       setSelectedImage(result.assets[0].uri)
       setShowAppOptions(true)
     }else {
@@ -81,31 +82,36 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     backgroundColor: '#25292e',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   imageContainer: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingTop: 50,
   },
   image: {
+    margin: 20,
     width: 320,
     height: 440,
-    borderRadius: 10
+    borderRadius: 10,
   },
   footerContainer: {
-    flex: 1 / 3,
+    flex: 1,
     alignItems: 'center',
+    justifyContent: 'flex-end',
+    paddingBottom: 40,
   },
   optionsContainer: {
     position: 'absolute',
-    bottom: 80,
+    bottom: 40,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
   },
   optionsRow: {
     alignItems: 'center',
     flexDirection: 'row',
   },
-
 });
