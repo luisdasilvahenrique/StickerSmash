@@ -52,17 +52,17 @@ export default function App() {
         console.log(e);
       }
     };
-
+    
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       allowsEditing: true,
       quality: 1,
     });
 
-    if(!result.canceled) {
-      setSelectedImage(result.assets[0].uri)
-      setShowAppOptions(true)
-    }else {
+    if (!result.canceled) {
+      setSelectedImage(result.assets[0].uri);
+      setShowAppOptions(true);
+    } else {
       alert('You did not select any image.');
     }
   };
@@ -70,6 +70,8 @@ export default function App() {
   if (status === null) {
     requestPermission();
   }
+
+  
 
   return (
     <GestureHandlerRootView  style={styles.container}>

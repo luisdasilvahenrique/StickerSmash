@@ -1,6 +1,9 @@
 import { View, Image } from 'react-native';
 import Animated from 'react-native-reanimated';
-import { PanGestureHandler, TapGestureHandler} from "react-native-gesture-handler";
+import {
+  PanGestureHandler,
+  TapGestureHandler,
+} from 'react-native-gesture-handler';
 import { TapGestureHandler } from 'react-native-gesture-handler';
 import Animated, {
   useAnimatedStyle,
@@ -8,7 +11,6 @@ import Animated, {
   useAnimatedGestureHandler,
   withSpring,
 } from 'react-native-reanimated';
-
 
 export default function EmojiSticker({ imageSize, stickerSource }) {
   const AnimatedImage = Animated.createAnimatedComponent(Image);
@@ -41,7 +43,7 @@ export default function EmojiSticker({ imageSize, stickerSource }) {
       ],
     };
   });
-  
+
   const onDoubleTap = useAnimatedGestureHandler({
     onActive: () => {
       if (scaleImage.value !== imageSize * 2) {
