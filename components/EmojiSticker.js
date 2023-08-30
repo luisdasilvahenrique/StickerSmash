@@ -1,14 +1,12 @@
-import { View, Image } from 'react-native';
-import Animated from 'react-native-reanimated';
+import { Image, View } from 'react-native';
 import {
   PanGestureHandler,
   TapGestureHandler,
 } from 'react-native-gesture-handler';
-import { TapGestureHandler } from 'react-native-gesture-handler';
 import Animated, {
+  useAnimatedGestureHandler,
   useAnimatedStyle,
   useSharedValue,
-  useAnimatedGestureHandler,
   withSpring,
 } from 'react-native-reanimated';
 
